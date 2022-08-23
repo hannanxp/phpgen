@@ -2,7 +2,10 @@
 
 $filename = 'ticket.png';
 
-for ($i=0; $i<=101; ++$i) {
+$json = file_get_contents('ticket.json');
+
+for ($i=0; $i<=201; ++$i) {
+    
     $im = imagecreatefrompng($filename);
     $white = imagecolorallocate($im, 255, 255, 255);
     $font = './Roboto-Regular.ttf';
@@ -24,4 +27,14 @@ for ($i=0; $i<=101; ++$i) {
     // add text
     imagettftext($im, $size, 0, $x, $y, $white, $font, $text);
     imagepng($im, './output/'.$i.'.png');
+    
+
+    $jsonOutput = json_decode($json);
+    $jsonOutput->name = "Ticket #" . $i;
+    $jsonOutput->image = $i . ".png";
+    $jsonOutput->edition = $i;
+    $jsonOutput->attributes[0]->value = strval($i);
+    $jsonOutput->properties->files[0]->uri = $i . ".png";
+    $newJson = json_encode($jsonOutput, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+    file_put_contents('./output/'.$i.'.json', $newJson);
 }

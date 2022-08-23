@@ -1,0 +1,30 @@
+{
+  "name": "Ticket #0",
+  "symbol": "T1",
+  "description": "Techpolitan Ticket",
+  "seller_fee_basis_points": 1000,
+  "image": "0.png",
+  "external_url": "https://www.instagram.com/techpolitan.id",
+  "edition": 0,
+  "attributes": [
+    {
+      "trait_type": "Number",
+      "value": "0"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "0.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "E6Etvgv1N6CgYsgEuEjKMBWjdnabdD2jTZavMrW6LoNM",
+        "share": 100
+      }
+    ]
+  }
+}
