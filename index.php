@@ -4,7 +4,7 @@ $filename = 'ticket.png';
 
 $json = file_get_contents('ticket.json');
 
-for ($i=0; $i<=201; ++$i) {
+for ($i=0; $i<=200; ++$i) {
     
     $im = imagecreatefrompng($filename);
     $white = imagecolorallocate($im, 255, 255, 255);
